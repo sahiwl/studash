@@ -5,6 +5,7 @@ import StudentDetail from './components/StudentDetail';
 import Dashboard from './components/Dashboard';
 import Charts from './components/Charts';
 import { Navbar } from './components/Navbar';
+import { Footer } from './components/Footer';
 
 function App() {
   return (
@@ -13,7 +14,10 @@ function App() {
         <Navbar/>
 
         <div className="container mt-8 p-4">
+          
+          
           <Routes>
+            
             <Route path="/" element={<Dashboard />} />
             <Route path="/students" element={<StudentList />} />
             <Route path="/students/:id" element={<StudentDetail />} />
@@ -21,6 +25,7 @@ function App() {
           </Routes>
         </div>
       </div>
+      <Footer/>
     </Router>
   );
 }

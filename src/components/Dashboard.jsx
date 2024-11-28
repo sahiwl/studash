@@ -10,6 +10,11 @@ function Dashboard() {
   }));
 
   return (
+    <div className="">
+<div className="text-center font-bold text-5xl p-3 m-10 ">
+          <p className=''>Student Dashboard</p>
+          <p>2024</p>
+          </div>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       <div className="bg-white p-6 rounded-lg shadow-md">
         <h2 className="text-2xl font-bold mb-4">Student Overview</h2>
@@ -44,6 +49,7 @@ function Dashboard() {
           <Bar dataKey="progress" fill="#3498db" />
         </BarChart>
       </div>
+    </div>
     </div>
   );
 }
