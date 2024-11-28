@@ -53,7 +53,7 @@ export const studentData = [
     progressScores: [
       { month: "Jan", progress: 78 },
       { month: "Feb", progress: 66 },
-      { month: "Mar", progress: 12 }
+      { month: "Mar", progress: 72 }
     ]
   },
     {

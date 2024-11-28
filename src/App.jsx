@@ -4,21 +4,13 @@ import StudentList from './components/StudentList';
 import StudentDetail from './components/StudentDetail';
 import Dashboard from './components/Dashboard';
 import Charts from './components/Charts';
+import { Navbar } from './components/Navbar';
 
 function App() {
   return (
     <Router>
-      <div className="min-h-screen">
-        <nav className="navbar">
-          <div className="container flex justify-between items-center">
-            <h1 className="text-2xl font-bold">Student Dashboard</h1>
-            <div className="space-x-4">
-              <Link to="/" className="hover:text-gray-200">Home</Link>
-              <Link to="/students" className="hover:text-gray-200">Students</Link>
-              <Link to="/charts" className="hover:text-gray-200">Charts</Link>
-            </div>
-          </div>
-        </nav>
+      <div className="min-h-screen w-screen">
+        <Navbar/>
 
         <div className="container mt-8 p-4">
           <Routes>
