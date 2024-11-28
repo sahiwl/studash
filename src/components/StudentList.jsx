@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { studentData } from '../data/studentData';
+import { studentData } from '../data/StudentData';
 
 function StudentList() {
   return (
