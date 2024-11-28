@@ -1,5 +1,5 @@
 import React from 'react';
-import { studentData } from '../data/studentData';
+import { studentData } from '../data/StudentData';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, Legend } from 'recharts';
 
 function Dashboard() {
