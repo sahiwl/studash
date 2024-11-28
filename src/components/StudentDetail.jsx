@@ -16,16 +16,16 @@ function StudentDetail() {
         <div className="space-y-2">
           <p><strong>Cohort:</strong> {student.cohort}</p>
           <div>
-            <h2 className="text-xl font-semibold mt-4">Assignments</h2>
-            {student.assignments.map(assignment => (
-              <div key={assignment.name} className="flex justify-between">
-                <span>{assignment.name}</span>
+            <h2 className="text-xl font-semibold mt-4">attendance</h2>
+            {student.attendance.map(attendance => (
+              <div key={attendance.name} className="flex justify-between">
+                <span>{attendance.name}</span>
                 <span className={`font-bold ${
-                  assignment.score >= 90 ? 'text-green-600' : 
-                  assignment.score >= 80 ? 'text-yellow-600' : 
+                  attendance.score >= 90 ? 'text-green-600' : 
+                  attendance.score >= 80 ? 'text-yellow-600' : 
                   'text-red-600'
                 }`}>
-                  {assignment.score}%
+                  {attendance.score}%
                 </span>
               </div>
             ))}

@@ -13,16 +13,20 @@ import {
 } from 'recharts';
 
 function Charts() {
-  // Aggregate assignment scores across all students
-  const assignmentData = studentData.flatMap(student => 
-    student.assignments.map(assignment => ({
-      name: assignment.name,
-      avgScore: studentData.reduce((sum, s) => 
-        sum + s.assignments.find(a => a.name === assignment.name).score, 0) / studentData.length
-    }))
+  const attendanceData = studentData.flatMap(student => 
+    student.attendance.map(attendance => {
+      const sum = studentData.reduce((acc, s) => {
+        const matchingAttendance = s.attendance.find(a => a.name === attendance.name);
+        return acc + (matchingAttendance ? matchingAttendance.score : 0); // Handle undefined
+      }, 0);
+      return {
+        name: attendance.name,
+        avgScore: sum / studentData.length
+      };
+    })
   ).filter((v, i, a) => a.findIndex(t => t.name === v.name) === i);
-
-  // Overall progress data
+ 
+  //progress data
   const progressData = studentData[0].progressScores.map(score => ({
     month: score.month,
     avgProgress: studentData.reduce((sum, student) => 
@@ -32,8 +36,8 @@ function Charts() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       <div className="bg-white p-6 rounded-lg shadow-md">
-        <h2 className="text-2xl font-bold mb-4">Average Assignment Scores</h2>
-        <BarChart width={500} height={300} data={assignmentData}>
+        <h2 className="text-2xl font-bold mb-4">Average attendance Scores</h2>
+        <BarChart width={500} height={300} data={attendanceData}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="name" />
           <YAxis />
